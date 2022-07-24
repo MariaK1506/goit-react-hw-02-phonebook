@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
-import { Form, Label, Input } from './ContactForm.styled';
+import { Form, Label, Input, Button } from './ContactForm.styled';
 
 export class ContactForm extends Component {
   nameInputId = nanoid();
@@ -75,7 +75,7 @@ export class ContactForm extends Component {
             required
           />
         </Label>
-        <button type="submit">Add contact</button>
+        <Button type="submit">Add contact</Button>
       </Form>
     );
   }

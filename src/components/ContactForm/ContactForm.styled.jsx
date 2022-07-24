@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
-  width: 500px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 15px;
+  width: 300px;
+
   padding: 15px;
   border: 1px solid #d4d4d4;
 `;
@@ -29,5 +27,30 @@ export const Input = styled.input`
   &:focus {
     outline: transparent;
     border: 1px solid #2196f3;
+  }
+`;
+
+export const Button = styled.button`
+  min-width: 150px;
+  height: 40px;
+  border: 0px solid transparent;
+  border-radius: 4px;
+
+  color: #fff;
+  background-color: #2196f3;
+
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
+
+  opacity: 1;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 `;

@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
+import { Label, Input } from './Filter.styled';
 
 export const Filter = ({ value, onChange }) => {
   const filterInputId = nanoid();
   return (
-    <label>
+    <Label>
       Find contacts by name
-      <input
+      <Input
         value={value}
         onChange={onChange}
         id={filterInputId}
@@ -16,7 +17,7 @@ export const Filter = ({ value, onChange }) => {
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         required
       />
-    </label>
+    </Label>
   );
 };
 
