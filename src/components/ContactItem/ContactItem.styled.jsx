@@ -6,8 +6,8 @@ export const Item = styled.li`
 
   flex-basis: calc(100% / 1 - 15px);
   padding: 15px 5px;
-  border: 1px solid #d4d4d4;
-
+  border: ${props => `1px solid ${props.theme.colors.darkGray}`};
+  border-radius: 4px;
   text-align: center;
 
   margin-left: 15px;
@@ -31,14 +31,14 @@ export const Item = styled.li`
 `;
 
 export const Name = styled.p`
-  color: #333232;
+  color: ${props => props.theme.colors.darkGray};
   font-weight: 500;
 `;
 
 export const Number = styled.p`
   margin-right: 15px;
 
-  color: #000000;
+  color: ${props => props.theme.colors.black};
 
   font-weight: 700;
   text-decoration: none;
@@ -47,7 +47,7 @@ export const Number = styled.p`
 
   &:hover,
   &:focus {
-    color: #2196f3;
+    color: ${props => props.theme.colors.blue};
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 `;
@@ -59,13 +59,13 @@ export const Button = styled.button`
   border-radius: 4px;
 
   color: #fff;
-  background-color: #2196f3;
+  background-color: ${props => props.theme.colors.blue};
 
   box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
 
   opacity: 1;
 
-  transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   cursor: pointer;
 

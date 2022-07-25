@@ -4,7 +4,7 @@ export const Form = styled.form`
   width: 300px;
 
   padding: 15px;
-  border: 1px solid #d4d4d4;
+  border: ${props => `1px solid ${props.theme.colors.lightGray}`};
 `;
 
 export const Label = styled.label`
@@ -13,12 +13,12 @@ export const Label = styled.label`
 
   margin-bottom: 15px;
 
-  color: #333232;
+  color: ${props => props.theme.colors.darkGray};
 `;
 
 export const Input = styled.input`
   padding: 11px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
+  border: ${props => `1px solid ${props.theme.colors.darkGray}`};
   border-radius: 4px;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -26,7 +26,7 @@ export const Input = styled.input`
 
   &:focus {
     outline: transparent;
-    border: 1px solid #2196f3;
+    border: ${props => `1px solid ${props.theme.colors.blue}`};
   }
 `;
 
@@ -37,7 +37,7 @@ export const Button = styled.button`
   border-radius: 4px;
 
   color: #fff;
-  background-color: #2196f3;
+  background-color: ${props => props.theme.colors.blue};
 
   box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
 

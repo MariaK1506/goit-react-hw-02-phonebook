@@ -6,7 +6,6 @@ import { Section } from './Section/Section';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactsList } from './ContactsList/ContactsList';
 import { Filter } from './Filter/Filter';
-import Basic from './Formik/Formik';
 
 export class App extends Component {
   state = {
@@ -17,20 +16,23 @@ export class App extends Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    // name: '',
-    // number: '',
   };
 
   addContact = ({ name, number }) => {
     /* Получили в App доступ к state формы */
-    const contact = {
+
+    const newContact = {
       id: nanoid(),
       name: name,
       number: number,
     };
-    this.setState(({ contacts }) => ({
-      contacts: [contact, ...contacts],
-    }));
+    const { contacts } = this.state;
+
+    contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase())
+      ? alert(`${name} is already in contacts`)
+      : this.setState(({ contacts }) => ({
+          contacts: [newContact, ...contacts],
+        }));
   };
 
   deleteContact = contactId => {
@@ -62,18 +64,21 @@ export class App extends Component {
         <GlobalStyle />
         <Container>
           <h1>Phonebook</h1>
-          <Section>
-            <ContactForm onSubmit={this.addContact} />
-          </Section>
-          <Section title="Contacts">
+        </Container>
+        <Section>
+          <Container>
+            <ContactForm onSubmit={this.addContact} />{' '}
+          </Container>
+        </Section>
+        <Section title="Contacts">
+          <Container>
             <Filter value={filter} onChange={this.changeFilter} />
             <ContactsList
               contacts={filteredContacts}
               onDeleteContact={this.deleteContact}
             />
-          </Section>
-          <Basic></Basic>
-        </Container>
+          </Container>
+        </Section>
       </>
     );
   }

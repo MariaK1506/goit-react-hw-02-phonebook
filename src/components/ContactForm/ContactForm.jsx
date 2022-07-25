@@ -31,13 +31,7 @@ export class ContactForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-
-    // const contact = {
-    //   id: nanoid(),
-    //   name: this.state.name,
-    //   number: this.state.number,
-    // };
-
+    
     this.props.onSubmit(this.state); /* даем доступ к state в App */
     this.formReset();
   };
