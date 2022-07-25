@@ -6,6 +6,7 @@ import { Section } from './Section/Section';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactsList } from './ContactsList/ContactsList';
 import { Filter } from './Filter/Filter';
+import Basic from './Formik/Formik';
 
 export class App extends Component {
   state = {
@@ -71,6 +72,7 @@ export class App extends Component {
               onDeleteContact={this.deleteContact}
             />
           </Section>
+          <Basic></Basic>
         </Container>
       </>
     );
