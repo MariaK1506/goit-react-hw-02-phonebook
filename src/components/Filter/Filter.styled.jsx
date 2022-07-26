@@ -13,8 +13,8 @@ export const Input = styled.input`
   padding: 11px;
   border: ${props => `1px solid ${props.theme.colors.darkGray}`};
   border-radius: 4px;
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
 
   &:focus {
