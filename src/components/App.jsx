@@ -61,12 +61,10 @@ export class App extends Component {
     return (
       <>
         <GlobalStyle />
-        <Container>
-          <h1>Phonebook</h1>
-        </Container>
+        <h1>Phonebook</h1>
         <Section>
           <Container>
-            <ContactForm onSubmit={this.addContact} />{' '}
+            <ContactForm onSubmit={this.addContact} />
           </Container>
         </Section>
         <Section title="Contacts">
