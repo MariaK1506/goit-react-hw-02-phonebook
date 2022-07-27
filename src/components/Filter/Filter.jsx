@@ -5,7 +5,7 @@ import { Label, Input } from './Filter.styled';
 export const Filter = ({ value, onChange }) => {
   const filterInputId = nanoid();
   return (
-    <Label>
+    <Label htmlFor={filterInputId}>
       Find contacts by name
       <Input
         value={value}
